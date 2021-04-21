@@ -1,5 +1,6 @@
 try {
   require('./secrets');
+  console.log(process.env)
 }
 catch (ex) {
   console.log(ex);
