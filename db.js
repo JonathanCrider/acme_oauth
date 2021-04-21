@@ -41,6 +41,12 @@ const GITHUB_ACCESS_TOKEN_FOR_USER_URL = 'https://api.github.com/user';
 //the authenticate methods is passed a code which has been sent by github
 //if successful it will return a token which identifies a user in this app
 User.authenticate = async (code) => {
+  const { data: response } = await axios.post(GITHUB_CODE_FOR_TOKEN_URL, {
+    code,
+    client_id: process.env.CLIENT_ID,
+    client_secret: process.env.CLIENT_SECRET
+  })
+  console.log(responese)
   throw 'nooooo';
 };
 
